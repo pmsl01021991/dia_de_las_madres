@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Día de las Madres</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/a2e0e6ad5f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="hearts"></div>
+
+  <section id="authSection" class="auth-section">
+    <div class="auth-card">
+      <h1>Feliz Día Mamá</h1>
+      <p>Una página especial hecha con amor 💖</p>
+
+      <div id="loginBox">
+        <input type="text" id="loginUser" placeholder="Usuario">
+        <input type="password" id="loginPass" placeholder="Contraseña">
+        <button onclick="login()">Ingresar</button>
+        <p>¿No tienes cuenta? <span onclick="showRegister()">Regístrate</span></p>
+      </div>
+
+      <div id="registerBox" class="hidden">
+        <input type="text" id="regName" placeholder="Nombre completo">
+        <input type="text" id="regUser" placeholder="Nuevo usuario">
+        <input type="password" id="regPass" placeholder="Nueva contraseña">
+        <button onclick="register()">Crear cuenta</button>
+        <p>¿Ya tienes cuenta? <span onclick="showLogin()">Inicia sesión</span></p>
+      </div>
+    </div>
+  </section>
+
+  <main id="mainPage" class="hidden">
+
+    <header class="hero" id="hero">
+      <div class="parallax-flores"></div>
+      <div id="heartClickContainer"></div>
+      <nav>
+        <h2 id="navbarTitle">🌸 Para ti una Mamá amada</h2>
+        <button onclick="logout()">Salir</button>
+      </nav>
+
+      <div class="hero-content">
+        <h1 class="titulo-hero">Feliz Día de las Madres</h1>
+        <p class="subtitulo-hero">Hoy celebramos tu amor, tu fuerza y tu corazón infinito.</p>
+      </div>
+    </header>
+
+    <section class="dedications">
+      <h2>Dedicatorias especiales</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Para una madre única</h3>
+          <p>Gracias por tu amor, paciencia y por estar siempre presente.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tu amor ilumina</h3>
+          <p>Eres el abrazo que calma y la sonrisa que llena el alma.</p>
+        </div>
+
+        <div class="card">
+          <h3>Mi mayor regalo</h3>
+          <p>Tenerte en mi vida es una bendición que nunca dejaré de agradecer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive">
+      <h2>Descubre tu mensaje especial</h2>
+
+      <div class="question-box">
+        <label>¿Qué palabra te describe mejor?</label>
+        <select id="q1">
+          <option value="amorosa">Amorosa</option>
+          <option value="fuerte">Fuerte</option>
+          <option value="alegre">Alegre</option>
+          <option value="protectora">Protectora</option>
+        </select>
+
+        <label>¿Qué es lo más importante para ti?</label>
+        <select id="q2">
+          <option value="familia">La familia</option>
+          <option value="paz">La paz</option>
+          <option value="felicidad">La felicidad</option>
+          <option value="recuerdos">Los recuerdos</option>
+        </select>
+
+        <label>¿Qué emoción quieres sentir hoy?</label>
+        <select id="q3">
+          <option value="amada">Amada</option>
+          <option value="valorada">Valorada</option>
+          <option value="feliz">Feliz</option>
+          <option value="especial">Especial</option>
+        </select>
+
+        <button onclick="generateMessage()">Crear mi mensaje</button>
+
+        <div id="resultMessage" class="result hidden"></div>
+      </div>
+    </section>
+
+    <section class="gift-section">
+      <h2>Tu regalo soñado</h2>
+
+      <div class="gift-card">
+        <h3>Una pregunta especial</h3>
+        <p>¿Cuál fue el regalo que nunca tuviste pero hubieras querido tener?</p>
+
+        <textarea id="giftInput" placeholder="Escribe aquí tu regalo soñado..."></textarea>
+
+        <button onclick="generateGiftCard()">Crear tarjeta</button>
+
+        <div id="giftResult" class="gift-result hidden"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Hecho con mucho amor para todas las madres 💕</p>
+    </footer>
+
+  </main>
+</body>
+</html>

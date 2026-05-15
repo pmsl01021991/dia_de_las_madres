@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administrador</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+  <section class="admin-panel">
+    <h1>Panel del Administrador</h1>
+    <p>Usuarios registrados y respuestas guardadas.</p>
+
+    <button onclick="goHome()">Volver</button>
+    <button class="danger" onclick="clearData()">Borrar datos</button>
+
+    <h2>Usuarios registrados</h2>
+    <div id="usersList"></div>
+
+    <h2>Respuestas guardadas</h2>
+    <div id="answersList"></div>
+  </section>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
