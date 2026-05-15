@@ -1,1 +1,795 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff0f6;
+  color: #5a2338;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* NAVBAR BRILLANTE */
+
+#navbarTitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    #ff4d8d,
+    #ff85a2,
+    #ffc2d1,
+    #ffffff,
+    #ffc2d1,
+    #ff85a2,
+    #ff4d8d
+  );
+
+  background-size: 300%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: brilloTexto 6s linear infinite;
+}
+
+/* TITULO HERO ANIMADO */
+
+.titulo-hero {
+  font-family: 'Great Vibes', cursive;
+  font-size: 85px;
+  color: #c2185b;
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  text-shadow:
+    0 0 10px rgba(255, 105, 180, 0.6),
+    0 0 20px rgba(255, 182, 193, 0.5);
+
+  animation:
+    aparecerHero 1.8s ease-out forwards,
+    flotarHero 4s ease-in-out infinite 2s,
+    brilloSuave 3s ease-in-out infinite;
+}
+
+/* ✨ Aparición */
+@keyframes aparecerHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌸 Movimiento flotante */
+@keyframes flotarHero {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 💖 Brillo distinto al navbar */
+@keyframes brilloSuave {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(255, 105, 180, 0.6),
+      0 0 20px rgba(255, 182, 193, 0.5);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 20, 147, 0.9),
+      0 0 35px rgba(255, 105, 180, 0.8);
+  }
+}
+
+/* NOMBRE DEL USUARIO */
+.nombre-user {
+  font-weight: bold;
+  text-shadow:
+    0 0 10px #ff4d8d,
+    0 0 20px #ff85a2,
+    0 0 30px #ffc2d1;
+}
+
+/* ANIMACIÓN DE BRILLO */
+@keyframes brilloTexto {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
+
+/* LOGIN */
+
+.auth-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(255, 105, 180, 0.35), rgba(255, 192, 203, 0.45)),
+    url("https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nombre-user {
+  color: #ff4d8d;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffc2d1;
+}
+
+.auth-card {
+  width: 380px;
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 15px 40px rgba(214, 51, 108, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.auth-card h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  color: #d63384;
+  text-shadow: 0 0 12px #ffb3d9;
+}
+
+.auth-card p {
+  margin: 12px 0;
+}
+
+.auth-card input,
+.question-box select,
+.gift-card textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  border: 2px solid #ffc2d1;
+  border-radius: 15px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff4d8d, #d63384);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 8px;
+  box-shadow: 0 8px 18px rgba(214, 51, 132, 0.35);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.auth-card span,
+.admin-link {
+  color: #d63384;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FONDO HERO CON PARALLAX */
+
+.hero {
+  overflow: hidden;
+}
+
+.parallax-flores {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.35), transparent 18%),
+    radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.25), transparent 16%),
+    radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.35), transparent 20%);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.2s ease-out;
+}
+
+.hero nav,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* SUBTÍTULO ANIMADO */
+
+.subtitulo-hero {
+  animation: aparecerSubtitulo 2s ease forwards, respirarTexto 3s ease-in-out infinite 2s;
+}
+
+@keyframes aparecerSubtitulo {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes respirarTexto {
+  0%, 100% {
+    letter-spacing: 0;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+  }
+  50% {
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 16px rgba(255,105,180,0.6);
+  }
+}
+
+/* CORAZONES AL MOVER/CLIC */
+
+.click-heart {
+  position: fixed;
+  font-size: 28px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: subirCorazon 1.4s ease-out forwards;
+}
+
+@keyframes subirCorazon {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.8) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px) scale(1.7) rotate(25deg);
+  }
+}
+
+/* HERO */
+
+.hero {
+  min-height: 90vh;
+  background:
+    linear-gradient(rgba(255, 182, 193, 0.45), rgba(255, 240, 246, 0.8)),
+    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+nav h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: #c2185b;
+}
+
+.hero-content {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.hero-content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 85px;
+  color: #c2185b;
+  text-shadow: 0 0 20px #fff;
+}
+
+.hero-content p {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* SECCIONES */
+
+section {
+  padding: 70px 8%;
+  text-align: center;
+}
+
+section h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  color: #d63384;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.card,
+.question-box,
+.gift-card,
+.result,
+.gift-result {
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 12px 28px rgba(214, 51, 132, 0.18);
+  border: 2px solid #ffd6e8;
+}
+
+.card h3 {
+  color: #c2185b;
+  margin-bottom: 10px;
+}
+
+.card::before {
+  content: "💖";
+  font-size: 35px;
+}
+
+.interactive {
+  background: #ffe4ef;
+}
+
+.question-box {
+  max-width: 600px;
+  margin: auto;
+}
+
+.question-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.result {
+  margin-top: 25px;
+  font-size: 18px;
+  line-height: 1.7;
+  background: linear-gradient(135deg, #fff, #ffe1ef);
+}
+
+.gift-section {
+  background:
+    linear-gradient(rgba(255, 240, 246, 0.92), rgba(255, 240, 246, 0.92)),
+    url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.gift-card {
+  max-width: 650px;
+  margin: auto;
+}
+
+.gift-card textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.gift-result {
+  margin-top: 25px;
+  background: linear-gradient(135deg, #ffeff7, #ffffff);
+}
+
+.gift-result h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: #d63384;
+}
+
+.swal-popup-madres {
+  border-radius: 28px !important;
+  padding: 25px !important;
+  box-shadow: 0 0 35px rgba(214, 51, 132, 0.35) !important;
+  overflow: hidden !important;
+}
+
+.swal-title-madres {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 46px !important;
+  color: #d63384 !important;
+  text-shadow:
+    0 0 10px #ffc2d1,
+    0 0 20px #ff85a2;
+  animation: popupBrillo 2.5s ease-in-out infinite;
+}
+
+.popup-img {
+  width: 300px;
+  max-width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 12px 25px rgba(214, 51, 132, 0.25);
+  animation: popupFloat 3s ease-in-out infinite;
+}
+
+.popup-text {
+  margin-top: 18px;
+  font-size: 18px;
+  color: #5a2338;
+  line-height: 1.6;
+}
+
+.popup-hearts {
+  margin-top: 15px;
+  font-size: 25px;
+  animation: corazonesPopup 2s ease-in-out infinite;
+}
+
+.swal-button-madres {
+  border-radius: 25px !important;
+  padding: 12px 32px !important;
+  font-size: 16px !important;
+  background: linear-gradient(135deg, #ff4d8d, #d63384) !important;
+  box-shadow: 0 8px 18px rgba(214, 51, 132, 0.35) !important;
+}
+
+@keyframes popupBrillo {
+  0%, 100% {
+    text-shadow:
+      0 0 10px #ffc2d1,
+      0 0 20px #ff85a2;
+  }
+  50% {
+    text-shadow:
+      0 0 20px #ff4d8d,
+      0 0 35px #ffc2d1;
+  }
+}
+
+@keyframes popupFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+@keyframes corazonesPopup {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* TARJETAS MÁS BONITAS */
+
+.card {
+  min-height: 230px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,235,245,0.95));
+  border: 2px solid #ffc2d1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: 
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+  animation: entradaCard 1s ease both, flotarCard 4s ease-in-out infinite;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s, 1.2s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.25s, 1.5s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.4s, 1.8s;
+}
+
+.card h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  color: #d63384;
+  margin-bottom: 16px;
+  text-shadow: 0 0 10px rgba(255, 133, 162, 0.35);
+}
+
+.card p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5a2338;
+  line-height: 1.6;
+}
+
+.card::before {
+  content: "💖";
+  display: block;
+  font-size: 38px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 8px rgba(255, 77, 141, 0.5));
+  animation: corazonFlotante 2.2s ease-in-out infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(255, 77, 141, 0.18),
+    transparent,
+    rgba(255, 194, 209, 0.25),
+    transparent
+  );
+  animation: giroBrillo 6s linear infinite;
+  opacity: 0;
+  z-index: 0;
+}
+
+.card h3,
+.card p,
+.card::before {
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover {
+  transform: translateY(-18px) scale(1.05) rotateX(6deg);
+  box-shadow:
+    0 28px 55px rgba(214, 51, 132, 0.32),
+    0 0 25px rgba(255, 133, 162, 0.45);
+  border-color: #ff4d8d;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:active {
+  transform: scale(0.94) rotateZ(-2deg);
+}
+
+/* ANIMACIONES */
+
+@keyframes entradaCard {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes flotarCard {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+@keyframes corazonFlotante {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.25);
+  }
+}
+
+@keyframes giroBrillo {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* EFECTO CLICK TARJETAS */
+
+.card.click-anim {
+  animation: vibrarCard 0.4s ease, reboteCard 0.3s ease 0.4s;
+}
+
+@keyframes vibrarCard {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4px, 2px); }
+  40% { transform: translate(4px, -2px); }
+  60% { transform: translate(-3px, 2px); }
+  80% { transform: translate(3px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes reboteCard {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.mensaje-animado span {
+  display: inline-block;
+  opacity: 0.7;
+
+  animation: palabraHabla 0.45s ease forwards;
+}
+
+@keyframes palabraHabla {
+
+  0% {
+    color: #5a2338;
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    color: red;
+    transform: scale(1.18);
+
+    text-shadow:
+      0 0 8px red,
+      0 0 15px #ff4d4d;
+
+    opacity: 1;
+  }
+
+  100% {
+    color: #5a2338;
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: none;
+  }
+
+}
+
+/* FOOTER PRO */
+
+footer {
+  position: relative;
+  background: linear-gradient(135deg, #c2185b, #ff4d8d, #ff85a2);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+/* TEXTO */
+
+footer p {
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.6),
+    0 0 20px rgba(255,133,162,0.8);
+
+  animation: brilloFooter 3s ease-in-out infinite;
+}
+
+/* BRILLO TEXTO */
+
+@keyframes brilloFooter {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(255,255,255,0.6),
+      0 0 20px rgba(255,133,162,0.8);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255,255,255,1),
+      0 0 35px rgba(255,77,141,1);
+  }
+}
+
+/* CORAZONES FLOTANDO */
+
+footer::before {
+  content: "💖 💕 💗 💓 💘 💝";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  font-size: 22px;
+  opacity: 0.25;
+  animation: corazonesFooter 12s linear infinite;
+}
+
+@keyframes corazonesFooter {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* EFECTO HOVER */
+
+footer:hover {
+  transform: scale(1.02);
+  transition: 0.4s;
+}
+
+/* CORAZONES */
+
+.hearts::before {
+  content: "💖 💕 💗 💓 💞 💘 💝";
+  position: fixed;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  font-size: 25px;
+  animation: floatHearts 8s linear infinite;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ADMIN */
+
+.admin-body {
+  background: linear-gradient(135deg, #ffe4ef, #fff);
+}
+
+.admin-panel {
+  max-width: 900px;
+  margin: auto;
+}
+
+.admin-panel h1 {
+  font-size: 45px;
+  color: #c2185b;
+}
+
+.admin-card {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  margin: 15px 0;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.danger {
+  background: linear-gradient(135deg, #ff1744, #b00020);
+}
