@@ -120,6 +120,9 @@ function login() {
             console.log("Error en popup:", error);
           }
 
+          }).catch((error) => {
+          alert("Error al iniciar sesión: " + error.message);
+
         });
       }
 
