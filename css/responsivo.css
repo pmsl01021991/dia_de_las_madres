@@ -1,0 +1,244 @@
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+  nav {
+    padding: 20px 5%;
+  }
+
+  .hero-content {
+    padding-top: 120px;
+  }
+
+  .hero-content h1,
+  .titulo-hero {
+    font-size: 65px;
+  }
+
+  .hero-content p,
+  .subtitulo-hero {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  section h2 {
+    font-size: 45px;
+  }
+
+  .dream-overlay h1 {
+    font-size: 65px;
+  }
+
+  .dream-overlay p {
+    font-size: 20px;
+  }
+
+  .family-message p {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 18px 5%;
+  }
+
+  #navbarTitle {
+    font-size: 30px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .hero-content {
+    padding-top: 90px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .hero-content h1,
+  .titulo-hero {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+
+  .hero-content p,
+  .subtitulo-hero {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  section h2 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .auth-card {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .auth-card h1 {
+    font-size: 42px;
+  }
+
+  .question-box,
+  .gift-card,
+  .family-message,
+  .husband-customizer {
+    padding: 25px;
+  }
+
+  .family-message h3 {
+    font-size: 34px;
+  }
+
+  .family-message p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .family-card img {
+    height: 220px;
+  }
+
+  .family-card h3 {
+    font-size: 24px;
+  }
+
+  .dream-img {
+    height: 320px;
+  }
+
+  .dream-overlay h1 {
+    font-size: 50px;
+  }
+
+  .dream-overlay p {
+    font-size: 17px;
+  }
+
+  .dream-final {
+    font-size: 28px;
+  }
+
+  .popup-img {
+    height: auto;
+  }
+
+  .popup-text {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 18px;
+  }
+
+  .husband-avatar {
+    transform: scale(0.85);
+  }
+
+}
+
+/* =========================
+   RESPONSIVE CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 480px) {
+
+  #navbarTitle {
+    font-size: 24px;
+  }
+
+  .hero-content h1,
+  .titulo-hero {
+    font-size: 38px;
+  }
+
+  .hero-content p,
+  .subtitulo-hero {
+    font-size: 16px;
+  }
+
+  section h2 {
+    font-size: 34px;
+  }
+
+  .auth-card h1 {
+    font-size: 36px;
+  }
+
+  .family-message h3 {
+    font-size: 28px;
+  }
+
+  .family-message p {
+    font-size: 16px;
+  }
+
+  .dream-overlay h1 {
+    font-size: 40px;
+  }
+
+  .dream-overlay p {
+    font-size: 15px;
+  }
+
+  .dream-final {
+    font-size: 22px;
+  }
+
+  .customizer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .husband-avatar {
+    transform: scale(0.72);
+  }
+
+  .popup-text {
+    font-size: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+}
