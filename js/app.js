@@ -39,7 +39,7 @@ class MessageManager {
     // MÚSICA
     const audio = new Audio("audio/musica2.mp3");
     audio.volume = 0.5;
-    audio.play();
+    audio.play().catch(() => {});
     
     // VOZ
     if ("speechSynthesis" in window && "SpeechSynthesisUtterance" in window) {
@@ -54,7 +54,10 @@ class MessageManager {
       // Espera un poquito para que primero suene la música
       setTimeout(() => {
         speechSynthesis.cancel();
-        speechSynthesis.speak(voz);
+
+        try {
+          speechSynthesis.speak(voz);
+        } catch(e) {}
       }, 300);
     
     }
@@ -195,7 +198,7 @@ class GiftManager {
     // SONIDO
     const audio = new Audio("audio/musica.mp3");
     audio.volume = 0.4;
-    audio.play();
+    audio.play().catch(() => {});
 
     // VOZ
     const voz = new SpeechSynthesisUtterance(
@@ -207,7 +210,10 @@ class GiftManager {
     voz.pitch = 1.1;
 
     speechSynthesis.cancel();
-    speechSynthesis.speak(voz);
+
+    try {
+      speechSynthesis.speak(voz);
+    } catch(e) {}
 
     const currentUser = StorageManager.getCurrentUser();
 
@@ -301,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       const audio = new Audio("audio/musica.mp3");
       audio.volume = 0.5;
-      audio.play();
+      audio.play().catch(() => {});
   
       // TEXTO DE LA TARJETA
       const texto = card.querySelector("p").innerText;
@@ -313,9 +319,12 @@ document.addEventListener("DOMContentLoaded", () => {
       voz.rate = 0.75;
       voz.pitch = 1.1;
       voz.volume = 1;
-  
+
       speechSynthesis.cancel();
-      speechSynthesis.speak(voz);
+  
+      try {
+        speechSynthesis.speak(voz);
+      } catch(e) {}
   
       setTimeout(() => {
         card.classList.remove("click-anim");
@@ -474,7 +483,7 @@ class FamilyManager {
 
     audio.volume = 0.4;
 
-    audio.play();
+    audio.play().catch(() => {});
 
     // VOZ
     const texto = box.innerText;
@@ -488,7 +497,9 @@ class FamilyManager {
 
     speechSynthesis.cancel();
 
-    speechSynthesis.speak(voz);
+    try {
+      speechSynthesis.speak(voz);
+    } catch(e) {}
 
     box.scrollIntoView({
       behavior: "smooth"

@@ -84,39 +84,44 @@ function login() {
       NavbarManager.loadUserName();
     }
 
-    Swal.fire({
-      title: `Bienvenida ${foundUser.name} 💖`,
-      html: `
-        <div class="popup-madres">
-          <img 
-            src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80" 
-            class="popup-img"
-          >
-          <p class="popup-text">
-            Esta experiencia fue creada con mucho cariño para ti.
-          </p>
-          <div class="popup-hearts">
-            💖 💕 💗 💓 💘
-          </div>
-        </div>
-      `,
-      showClass: {
-        popup: "animate__animated animate__zoomIn"
-      },
-      hideClass: {
-        popup: "animate__animated animate__fadeOutDown"
-      },
-      confirmButtonText: "Comenzar",
-      confirmButtonColor: "#d63384",
-      background: "#fff7fb",
-      customClass: {
-        popup: "swal-popup-madres",
-        title: "swal-title-madres",
-        confirmButton: "swal-button-madres"
+         try {
+            Swal.fire({
+              title: `Bienvenida ${foundUser.name} 💖`,
+              html: `
+                <div class="popup-madres">
+                  <img 
+                    src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80" 
+                    class="popup-img"
+                  >
+                  <p class="popup-text">
+                    Esta experiencia fue creada con mucho cariño para ti.
+                  </p>
+                  <div class="popup-hearts">
+                    💖 💕 💗 💓 💘
+                  </div>
+                </div>
+              `,
+              showClass: {
+                popup: "animate__animated animate__zoomIn"
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOutDown"
+              },
+              confirmButtonText: "Comenzar",
+              confirmButtonColor: "#d63384",
+              background: "#fff7fb",
+              customClass: {
+                popup: "swal-popup-madres",
+                title: "swal-title-madres",
+                confirmButton: "swal-button-madres"
+              }
+            });
+          } catch (error) {
+            console.log("Error en popup:", error);
+          }
+
+        });
       }
-    });
-  });
-}
 
 function logout() {
   localStorage.removeItem("currentUser");
