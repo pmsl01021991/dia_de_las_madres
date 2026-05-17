@@ -71,6 +71,16 @@ class MessageManager {
       result: message,
       date: new Date().toLocaleString()
     });
+
+    const { ref, push } = window.firebaseDB;
+
+    push(ref(window.db, "interacciones"), {
+      tipo: "mensaje",
+      usuario: currentUser ? currentUser.user : "Invitado",
+      nombre: currentUser ? currentUser.name : "Invitado",
+      resultado: message,
+      fecha: new Date().toLocaleString()
+    });
   }
 }
 
@@ -199,7 +209,21 @@ class GiftManager {
     speechSynthesis.cancel();
     speechSynthesis.speak(voz);
 
+    const currentUser = StorageManager.getCurrentUser();
+
+    const { ref, push } = window.firebaseDB;
+
+    push(ref(window.db, "interacciones"), {
+      tipo: "regalo",
+      usuario: currentUser ? currentUser.user : "Invitado",
+      nombre: currentUser ? currentUser.name : "Invitado",
+      regalo: gift,
+      fecha: new Date().toLocaleString()
+    });
+
   }
+
+  
 
 }
 
@@ -265,13 +289,6 @@ window.addEventListener("DOMContentLoaded", () => {
   App.init();
 });
 
-function generateMessage() {
-  MessageManager.generateMessage();
-}
-
-function generateGiftCard() {
-  GiftManager.generateGiftCard();
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".card");

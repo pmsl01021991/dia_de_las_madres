@@ -1,6 +1,6 @@
-function loadAdminData() {
+const { ref, onValue } = window.firebaseDB;
 
-  const { ref, onValue } = window.firebaseDB;
+function loadAdminData() {
 
   const usersRef = ref(window.db, "usuarios");
 
@@ -43,5 +43,44 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     loadAdminData();
   }, 500);
+
+});
+
+const interactionsRef = ref(window.db, "interacciones");
+
+onValue(interactionsRef, (snapshot) => {
+
+  const data = snapshot.val();
+
+  const answersList = document.getElementById("answersList");
+
+  if (!data) {
+    answersList.innerHTML = "<p>No hay interacciones.</p>";
+    return;
+  }
+
+  answersList.innerHTML = Object.values(data).reverse().map(item => `
+    <div class="admin-card">
+      <h3>${item.nombre}</h3>
+
+      <p><strong>Usuario:</strong> ${item.usuario}</p>
+
+      <p><strong>Tipo:</strong> ${item.tipo}</p>
+
+      ${
+        item.resultado
+        ? `<p><strong>Mensaje:</strong> ${item.resultado}</p>`
+        : ""
+      }
+
+      ${
+        item.regalo
+        ? `<p><strong>Regalo:</strong> ${item.regalo}</p>`
+        : ""
+      }
+
+      <p><strong>Fecha:</strong> ${item.fecha}</p>
+    </div>
+  `).join("");
 
 });
