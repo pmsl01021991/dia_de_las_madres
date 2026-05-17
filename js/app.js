@@ -526,3 +526,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+function generateMessage() {
+  MessageManager.generateMessage();
+}
+
+function generateGiftCard() {
+  GiftManager.generateGiftCard();
+}
