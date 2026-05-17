@@ -424,14 +424,14 @@ class FamilyManager {
     const mensajes = {
 
       esposo: `
-        <h3>Un mensaje de tu esposo 💍</h3>
+        <h3>Un mensaje de tu esposo </h3>
 
         <p>
           Amor, hoy quiero recordarte lo valiosa que eres.
           Gracias por llenar nuestro hogar de ternura, paciencia y alegría.
           Eres una mujer maravillosa y una madre increíble.
           Hoy mereces sentirte amada, admirada y especial,
-          porque para nosotros eres un regalo de Dios 💖
+          porque para nosotros eres un regalo de Dios 
         </p>
       `,
 
