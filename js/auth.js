@@ -20,7 +20,8 @@ function register() {
 
   const { ref, get, set } = window.firebaseDB;
 
-  const userRef = ref(window.db, "usuarios/" + user);
+  const safeUser = user.replaceAll(".", "_");
+  const userRef = ref(window.db, "usuarios/" + safeUser);
 
   get(userRef).then((snapshot) => {
     if (snapshot.exists()) {
@@ -58,7 +59,8 @@ function login() {
 
   const { ref, get } = window.firebaseDB;
 
-  const userRef = ref(window.db, "usuarios/" + user);
+  const safeUser = user.replaceAll(".", "_");
+  const userRef = ref(window.db, "usuarios/" + safeUser);
 
   get(userRef).then((snapshot) => {
     if (!snapshot.exists()) {
