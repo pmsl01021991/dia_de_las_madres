@@ -1,30 +1,33 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
 import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-  query,
-  where
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+  getDatabase,
+  ref,
+  push,
+  onValue,
+  get,
+  set
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROJECT_ID",
-  storageBucket: "TU_PROYECTO.appspot.com",
-  messagingSenderId: "TU_MESSAGING_ID",
-  appId: "TU_APP_ID"
+  apiKey: "AIZaSyDIGWQWrKuf8ny800zu_6_IBIIpF5K2068",
+  authDomain: "dia-de-las-madres-d9de4.firebaseapp.com",
+  databaseURL: "https://dia-de-las-madres-d9de4-default-rtdb.firebaseio.com",
+  projectId: "dia-de-las-madres-d9de4",
+  storageBucket: "dia-de-las-madres-d9de4.appspot.com",
+  messagingSenderId: "541609721879",
+  appId: "1:541609721879:web:9cdf03b9521f9aa6bfdc52"
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+
+const db = getDatabase(app);
 
 window.db = db;
-window.firestoreTools = {
-  collection,
-  addDoc,
-  getDocs,
-  query,
-  where
+window.firebaseDB = {
+  ref,
+  push,
+  onValue,
+  get,
+  set
 };
