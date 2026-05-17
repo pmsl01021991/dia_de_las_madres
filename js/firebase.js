@@ -31,3 +31,5 @@ window.firebaseDB = {
   get,
   set
 };
+
+console.log("Firebase conectado correctamente");
